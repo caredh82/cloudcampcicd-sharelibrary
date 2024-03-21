@@ -7,6 +7,6 @@ def call(Map parameters){
         path="-f ${fileArg}"
     }
     stage('Build'){
-        sh "exec docker build -t ${parameters.tag} ${path} ${context}"
+        sh "exec docker build -t ${parameters.tag} ${path} ${parameters.context}"
     }
 }
