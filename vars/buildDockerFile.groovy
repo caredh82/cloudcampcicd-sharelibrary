@@ -1,10 +1,10 @@
 def call(Map parameters){
 // Metodos
-    if (fileArg=="") {
+    if (parameters.fileArg=="") {
         path=""
     }
     else{
-        path="-f ${fileArg}"
+        path="-f ${parameters.fileArg}"
     }
     stage('Build'){
         sh "exec docker build -t ${parameters.tag} ${path} ${parameters.context}"
